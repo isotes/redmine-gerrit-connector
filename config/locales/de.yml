@@ -1,0 +1,25 @@
+de:
+  revision_gerrit_name: Gerrit
+  revision_gerrit_title: Liste der Repository Changes auf Gerrit
+  revision_gitiles_name: Gitiles
+  revision_gitiles_title: Diese Revision auf Gitiles
+  revision_download_name: Download
+  revision_download_title: Download .tar.gz von Gitiles
+  issue_gerrit_name: Gerrit
+  issue_gerrit_title: Suche zugehöriger Changes auf Gerrit
+  settings_default: Standard
+  settings_general: Allgemein
+  local_git_base_url: Präfix der lokalen GIT Repositories
+  gerrit_base_url: Gerrit URL
+  gitiles_base_url: Gitiles URL
+  settings_revision_buttons: Buttons in der Sektion "Auch abrufbar als" der Repository Ansicht
+  settings_link_template_used: Link Template
+  settings_issue_buttons: Buttons in der Sektion "Auch abrufbar als" der Ticket Ansicht
+  settings_button_css_classes: CSS Klassen für die Buttons
+  settings_note:
+    Die CSS Klassen definieren die Icons auf den Buttons.
+    Die Standardeinstellungen sind für Redmine 4.1 während nicht alle Icons in älteren Versionen verfügbar sind.
+    Die verfügbaren CSS Klassen sind in der Datei
+    <a href="https://github.com/redmine/redmine/blob/master/public/stylesheets/application.css">application.css</a>
+    (in der jeweiligen Revision) aufgelistet.
+    <br>Es ist auch möglich andere CSS-Klassen anzugeben um ein alternatives Theme zu nutzen.

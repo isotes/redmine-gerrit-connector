@@ -1,0 +1,75 @@
+<% content_for :header_tags do %>
+<style>
+	.gcnote {
+		margin-left: 1em;
+		filter: brightness(150%);
+	}
+</style>
+<% end %>
+
+<h3>General</h3>
+<p>
+	<label><%= l(:local_git_base_url) %></label>
+	<%= text_field_tag('settings[local_git_base_url]', GerritConnector::Settings.pure(:local_git_base_url), placeholder: '/opt/gerrit-repos', :size => 60) %>
+</p>
+<p>
+	<label><%= l(:gerrit_base_url) %></label>
+	<%= text_field_tag('settings[gerrit_base_url]', GerritConnector::Settings.pure(:gerrit_base_url), placeholder: 'https://gerrit.example.com', :size => 60) %>
+</p>
+<p>
+	<label><%= l(:gitiles_base_url) %></label>
+	<%= text_field_tag('settings[gitiles_base_url]', GerritConnector::Settings.pure(:gitiles_base_url), placeholder: 'https://gerrit.example.com/plugins/gitiles', :size => 60) %>
+	<span class="gcnote"><%= l(:settings_default) %>: $GERRIT_BASE_URL/plugins/gitiles/</span>
+</p>
+
+<h3><%= l(:settings_revision_buttons) %></h3>
+<p>
+	<label><%= l(:revision_gerrit_title) %></label>
+	<input type="hidden" name="settings[revision_gerrit_show]" value="0">
+	<%= check_box_tag('settings[revision_gerrit_show]', 1, GerritConnector::Settings.pure(:revision_gerrit_show)) %>
+	<span class="gcnote"><%= l(:settings_link_template_used) %>: $GERRIT_BASE_URL/q/project:$REPOSITORY</span>
+</p>
+<p>
+	<label><%= l(:revision_gitiles_title) %></label>
+	<input type="hidden" name="settings[revision_gitiles_show]" value="0">
+	<%= check_box_tag('settings[revision_gitiles_show]', 1, GerritConnector::Settings.pure(:revision_gitiles_show)) %>
+	<span class="gcnote"><%= l(:settings_link_template_used) %>: $GITILES_BASE_URL/$REPOSITORY/+/$REF</span>
+</p>
+<p>
+	<label><%= l(:revision_download_title) %></label>
+	<input type="hidden" name="settings[revision_download_show]" value="0">
+	<%= check_box_tag('settings[revision_download_show]', 1, GerritConnector::Settings.pure(:revision_download_show)) %>
+	<span class="gcnote"><%= l(:settings_link_template_used) %>: $GITILES_BASE_URL/$REPOSITORY/+archive/$REF.tar.gz</span>
+</p>
+
+<h3><%= l(:settings_issue_buttons) %></h3>
+<p>
+	<label><%= l(:issue_gerrit_title) %></label>
+	<input type="hidden" name="settings[issue_gerrit_show]" value="0">
+	<%= check_box_tag('settings[issue_gerrit_show]', 1, GerritConnector::Settings.pure(:issue_gerrit_show)) %>
+	<span class="gcnote"><%= l(:settings_link_template_used) %>: $GERRIT_BASE_URL/q/tr:$ID</span>
+</p>
+
+<h3><%= l(:settings_button_css_classes) %></h3>
+<p>
+	<label><%= l(:revision_gerrit_title) %></label>
+	<%= text_field_tag('settings[revision_gerrit_css_class]', GerritConnector::Settings.pure(:revision_gerrit_css_class), :size => 20) %>
+	<span class="gcnote"><%= l(:settings_default) %>: <%= GerritConnector::Settings.fallback(:revision_gerrit_css_class) %></span>
+</p>
+<p>
+	<label><%= l(:revision_gitiles_title) %></label>
+	<%= text_field_tag('settings[revision_gitiles_css_class]', GerritConnector::Settings.pure(:revision_gitiles_css_class), :size => 20) %>
+	<span class="gcnote"><%= l(:settings_default) %>: <%= GerritConnector::Settings.fallback(:revision_gitiles_css_class) %></span>
+</p>
+<p>
+	<label><%= l(:revision_download_title) %></label>
+	<%= text_field_tag('settings[revision_download_css_class]', GerritConnector::Settings.pure(:revision_download_css_class), :size => 20) %>
+	<span class="gcnote"><%= l(:settings_default) %>: <%= GerritConnector::Settings.fallback(:revision_download_css_class) %></span>
+</p>
+<p>
+	<label><%= l(:issue_gerrit_title) %></label>
+	<%= text_field_tag('settings[issue_gerrit_css_class]', GerritConnector::Settings.pure(:issue_gerrit_css_class), :size => 20) %>
+	<span class="gcnote"><%= l(:settings_default) %>: <%= GerritConnector::Settings.fallback(:issue_gerrit_css_class) %></span>
+</p>
+
+<div><%= raw l(:settings_note) %></div>

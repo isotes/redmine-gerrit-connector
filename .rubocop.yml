@@ -1,0 +1,12 @@
+Layout/IndentationStyle:
+  EnforcedStyle: tabs
+Layout/IndentationWidth:
+  Width: 1
+Metrics/MethodLength:
+  Max: 30
+Metrics/AbcSize:
+  Max: 30
+Style/TrailingCommaInHashLiteral:
+  Description: 'Checks for trailing comma in hash literals.'
+  Enabled: true
+  EnforcedStyleForMultiline: comma
