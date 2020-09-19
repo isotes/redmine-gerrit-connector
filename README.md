@@ -1,9 +1,9 @@
 # Redmine Gerrit Connector Plugin
 Extend [Redmine](https://redmine.org/) revision and issue views with links to [Gerrit](https://gerritcodereview.com/) and the [Gitiles](https://gerrit.googlesource.com/gitiles/) repository browser.
 
-[![Revision screenshot](docs/revision.png)](docs/revision.png)
+[![Revision screenshot](docs/revision.png)](docs/revision.png "Screenshot (using PurpleMine2 theme)")
 
-This plugin targets a setup where Gerrit hosts the Git repositories and replicates them to Redmine to benefit from the Redmine issue-revision linking and the Redmine repository browser. It adds links on Redmine back to Gerrit to search for associated changes. Additionally, since both Gitiles and the Redmine repository browser offer functionalities missing from the other, the plugin add links to Gitiles, e.g., to download a repository revision.
+This plugin targets a setup where Gerrit hosts the Git repositories and replicates them to Redmine to benefit from the Redmine issue-revision linking and the Redmine repository browser. It adds links on Redmine back to Gerrit to search for associated changes. Additionally, since both Gitiles and the Redmine repository browser offer functionalities missing from the other, the plugin adds links to Gitiles, e.g., to download a repository revision.
 
 The links are realized as additional buttons in the 'Also available in' sections on the corresponding page.
 
